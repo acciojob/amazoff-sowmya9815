@@ -113,10 +113,10 @@ public class OrderRepository {
             assOrd = mapElement.getValue();
             for (String s : assOrd) {
                 if(s.equals(orderId)){
-                    assOrd.remove(s);
-                    partnerOrderMap.put(mapElement.getKey(),assOrd);
                     DeliveryPartner d = deliveryPartnerMap.get(mapElement.getKey());
                     d.setNumberOfOrders(d.getNumberOfOrders()-1);
+                    assOrd.remove(s);
+                    partnerOrderMap.put(mapElement.getKey(),assOrd);
                     break;
                 }
             }
